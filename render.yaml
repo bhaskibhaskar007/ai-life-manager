@@ -1,0 +1,28 @@
+services:
+  # Backend API & FastMCP Server
+  - type: web
+    name: ai-life-manager-backend
+    env: python
+    rootDir: backend
+    buildCommand: "pip install -r requirements.txt && alembic upgrade head"
+    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: DEBUG
+        value: false
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ai-life-manager-db
+          property: connectionString
+      - key: CORS_ALLOWED_ORIGINS
+        value: "https://ai-life-manager.vercel.app,http://localhost:5173"
+
+databases:
+  # Managed PostgreSQL Database
+  - name: ai-life-manager-db
+    databaseName: ai_life_manager
+    user: ai_life_manager
+    plan: free

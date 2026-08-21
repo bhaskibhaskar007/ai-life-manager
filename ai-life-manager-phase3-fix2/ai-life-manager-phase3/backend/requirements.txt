@@ -1,0 +1,53 @@
+# --- Web framework ---
+# Bumped from 0.115.6 (was 2025-era, capped starlette<0.42.0) — fastmcp
+# now requires starlette>=1.0.1, which only became supported in FastAPI
+# after a Feb 2026 compatibility PR. 0.141.1 is current as of Jul 2026.
+fastapi==0.141.1
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+
+# --- MCP ---
+# Bumped to the latest 3.4.x (was 3.4.3) — fastmcp-slim's own dependency
+# floors move between patch releases, so staying current avoids chasing
+# a moving target across pydantic/python-dotenv/etc.
+fastmcp==3.4.6
+
+# --- Database ---
+sqlalchemy==2.0.38
+alembic==1.14.1
+psycopg2-binary==2.9.10          # PostgreSQL (production)
+aiosqlite==0.20.0                # SQLite (development, async)
+asyncpg==0.30.0                  # PostgreSQL (production, async)
+
+# --- Validation / settings ---
+# NOTE: left unpinned (floor only) on purpose. fastmcp-slim pins its own
+# minimum versions for pydantic/pydantic-settings and bumps them between
+# patch releases; hard-pinning here caused repeated ResolutionImpossible
+# errors. Let pip resolve the actual compatible version.
+pydantic>=2.11.7,<3.0.0
+pydantic-settings>=2.7.1
+
+# --- Auth / security ---
+python-jose[cryptography]==3.3.0
+passlib[argon2]==1.7.4
+# Also left as a floor, not a pin — fastmcp-slim requires >=1.1.0 and
+# has bumped this floor between patch releases.
+python-dotenv>=1.1.0
+
+# --- HTTP client (weather, external APIs) ---
+httpx==0.28.1
+
+# --- LLM client ---
+anthropic==0.45.2
+
+# --- Rate limiting ---
+slowapi==0.1.9
+
+# --- Testing ---
+pytest==8.3.4
+pytest-asyncio==0.25.3
+pytest-cov==6.0.0
+
+# --- Dev tooling ---
+black==25.1.0
+ruff==0.9.4

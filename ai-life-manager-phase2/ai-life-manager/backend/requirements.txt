@@ -1,0 +1,41 @@
+# --- Web framework ---
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+
+# --- MCP ---
+fastmcp==3.4.3
+
+# --- Database ---
+sqlalchemy==2.0.38
+alembic==1.14.1
+psycopg2-binary==2.9.10          # PostgreSQL (production)
+aiosqlite==0.20.0                # SQLite (development, async)
+asyncpg==0.30.0                  # PostgreSQL (production, async)
+
+# --- Validation / settings ---
+pydantic==2.10.6
+pydantic-settings==2.7.1
+
+# --- Auth / security ---
+python-jose[cryptography]==3.3.0
+passlib[argon2]==1.7.4
+python-dotenv==1.0.1
+
+# --- HTTP client (weather, external APIs) ---
+httpx==0.28.1
+
+# --- LLM client ---
+anthropic==0.45.2
+
+# --- Rate limiting ---
+slowapi==0.1.9
+
+# --- Testing ---
+pytest==8.3.4
+pytest-asyncio==0.25.3
+pytest-cov==6.0.0
+
+# --- Dev tooling ---
+black==25.1.0
+ruff==0.9.4
