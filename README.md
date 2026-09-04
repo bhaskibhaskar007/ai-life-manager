@@ -1,13 +1,22 @@
 # 🚀 AI Life Manager — Context-Aware Personal AI Assistant Powered by FastMCP
 
-[![FastMCP](https://img.shields.io/badge/MCP-FastMCP%20v3.4-6366f1.svg)](https://modelcontextprotocol.io/)
-[![FastAPI](https://img.shields.io/badge/Backend-FastAPI%200.141-009688.svg)](https://fastapi.tiangolo.com/)
-[![React](https://img.shields.io/badge/Frontend-React%2018%20+%20Vite%206-61dafb.svg)](https://react.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Styling-Tailwind%20CSS-38b2ac.svg)](https://tailwindcss.com/)
-[![Pytest](https://img.shields.io/badge/Tests-80%2F80%20Passing-brightgreen.svg)]()
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)]()
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-ai--life--manager--two.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://ai-life-manager-two.vercel.app)
+[![FastMCP](https://img.shields.io/badge/MCP-FastMCP%20v3.4-6366f1.svg?style=for-the-badge)](https://modelcontextprotocol.io/)
+[![FastAPI](https://img.shields.io/badge/Backend-FastAPI%200.141-009688.svg?style=for-the-badge)](https://fastapi.tiangolo.com/)
+[![React](https://img.shields.io/badge/Frontend-React%2018%20+%20Vite%206-61dafb.svg?style=for-the-badge)](https://react.dev/)
+[![Pytest](https://img.shields.io/badge/Tests-80%2F80%20Passing-brightgreen.svg?style=for-the-badge)]()
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)]()
 
 > **AI Life Manager** is a full-stack, production-grade personal AI operating system that harnesses the **Model Context Protocol (FastMCP)** to safely connect Large Language Models with financial analytics, expense tracking, task scheduling, live weather forecasting, and persistent memory.
+
+---
+
+## 🌐 Live Production Deployment
+
+👉 **Live Frontend App:** **[https://ai-life-manager-two.vercel.app](https://ai-life-manager-two.vercel.app)**  
+👉 **GitHub Repository:** **[https://github.com/bhaskibhaskar007/ai-life-manager](https://github.com/bhaskibhaskar007/ai-life-manager)**
+
+> ⚡ **Evaluation Demo Mode**: On the login screen, simply click **"⚡ Instant 1-Click Demo Evaluation Mode"** to test without creating an account.
 
 ---
 
@@ -79,11 +88,9 @@ graph TD
 
 ---
 
-## 🚀 Quickstart Guide
+## 🚀 Quickstart Guide (Local Development)
 
-### Option 1: Run Locally
-
-#### 1. Backend Setup
+### 1. Backend Setup
 ```bash
 cd backend
 python -m venv venv
@@ -102,26 +109,14 @@ alembic upgrade head
 uvicorn app.main:app --reload --port 8000
 ```
 
-#### 2. Frontend Setup
+### 2. Frontend Setup
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-Visit **http://localhost:5173** to access the dashboard.
-- Click **"⚡ Instant 1-Click Demo Evaluation Mode"** on the login screen to explore immediately with pre-loaded demo data.
-
----
-
-### Option 2: Run with Docker Compose
-
-```bash
-docker compose up --build
-```
-- Frontend: `http://localhost:5173`
-- Backend API Docs: `http://localhost:8000/docs`
-- Health Check: `http://localhost:8000/health`
+Visit **http://localhost:5173** to access the local dashboard.
 
 ---
 
@@ -133,7 +128,7 @@ pytest backend/tests -v
 ```
 Output:
 ```
-============================= 80 passed in 16.98s =============================
+============================= 80 passed in 18.61s =============================
 ```
 
 ---
