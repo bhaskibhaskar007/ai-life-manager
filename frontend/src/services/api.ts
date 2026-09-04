@@ -11,7 +11,9 @@ import {
   WeeklyComparison,
 } from '../types';
 
-const API_BASE = (import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace(/\/$/, '') : '') + '/api/v1';
+const viteEnv = (import.meta as unknown as { env?: Record<string, string> })?.env;
+const rawBase = viteEnv?.VITE_API_URL || '';
+const API_BASE = (rawBase ? rawBase.replace(/\/$/, '') : '') + '/api/v1';
 
 class ApiService {
   private getHeaders(): HeadersInit {
